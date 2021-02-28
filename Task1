@@ -1,1 +1,272 @@
+# mysql
+#----SET ENGINE AS MyISAM----
 
+mysql> set @@default_storage_engine = 'MyISAM';
+Query OK, 0 rows affected (0.00 sec)
+
+#-----CREATE DATABASE-------
+
+mysql> create database k1;
+Query OK, 1 row affected (0.00 sec)
+
+#------SHOW DATABASE--------
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| k1                 |
+| mysql              |
+| performance_schema |
++--------------------+
+4 rows in set (0.05 sec)
+
+#---------USE DATABSE k1-------
+
+mysql> use k1;
+Database changed
+mysql> create table employeesWithMyISAM (id int,name varchar(50),city varchar(50)) ENGINE = MyISAM;
+Query OK, 0 rows affected (0.02 sec)
+
+#-------CREATE TABLES ENGINE AS MyISAM-------
+
+----table1------
+mysql> create table data1(id int,name varchar(50))ENGINE=MyISAM;
+Query OK, 0 rows affected (0.06 sec)
+
+-----table2------
+mysql> create table data2(id int,name varchar(50))ENGINE=MyISAM;
+Query OK, 0 rows affected (0.06 sec)
+
+-----table3------
+mysql> create table data3(id int,name varchar(50))ENGINE=MyISAM;
+Query OK, 0 rows affected (0.03 sec)
+
+------table4-----
+mysql> create table employeesWithMyISAM (id int,name varchar(50),city varchar(50)) ENGINE = MyISAM;
+Query OK, 0 rows affected (0.02 sec)
+
+-------table5-----
+mysql> create table trainees (id int, name varchar(50),state varchar(50))ENGINE= MyISAM;
+Query OK, 0 rows affected (0.05 sec)
+
+#------------INSERT DATA INTO TABLES-----------
+
+----INSERT DATA INTO TABLE-1----
+
+mysql> insert into data1(id,name)values(1,'Girish');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> insert into data1(id,name)values(2,'Amit');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into data1(id,name)values(3,'Rohit');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into data1(id,name)values(4,'Saurya');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into data1(id,name)values(5,'Dharmesh');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from data1;
++------+----------+
+| id   | name     |
++------+----------+
+|    1 | Girish   |
+|    2 | Amit     |
+|    3 | Rohit    |
+|    4 | Saurya   |
+|    5 | Dharmesh |
++------+----------+
+5 rows in set (0.00 sec)
+
+-----INSERT DATA INTO TABLE-2------
+
+mysql> insert into data2(id,name)values(1,'Amish');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into data2(id,name)values(2,'Yash');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into data2(id,name)values(3,'Vinod');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into data2(id,name)values(4,'Raj');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into data2(id,name)values(5,'Harish');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from data2;
++------+--------+
+| id   | name   |
++------+--------+
+|    1 | Amish  |
+|    2 | Yash   |
+|    3 | Vinod  |
+|    4 | Raj    |
+|    5 | Harish |
++------+--------+
+5 rows in set (0.00 sec)
+
+-----INSERT DATA INTO TABLE-3-------
+
+mysql> insert into data3(id,name)values(1,'Lucky');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into data3(id,name)values(2,'Laxman');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into data3(id,name)values(3,'Bablu');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into data3(id,name)values(4,'Keshav');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into data3(id,name)values(5,'Raman');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from data3;
++------+--------+
+| id   | name   |
++------+--------+
+|    1 | Lucky  |
+|    2 | Laxman |
+|    3 | Bablu  |
+|    4 | Keshav |
+|    5 | Raman  |
++------+--------+
+5 rows in set (0.00 sec)
+
+-------INSERT DATA INTO TABLE-4--------
+
+mysql> insert into employeesWithMyISAM(id,name,city)values(1,'Animesh','Surat');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into employeesWithMyISAM(id,name,city)values(1,'Animesh','Surat');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into employeesWithMyISAM(id,name,city)values(2,'Raghav','Delhi'); 
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into employeesWithMyISAM(id,name,city)values(3,'Hari','Jaipur');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into employeesWithMyISAM(id,name,city)values(4,'Shiva','Kashi');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from employeesWithMyISAM;
++------+---------+--------+
+| id   | name    | city   |
++------+---------+--------+
+|    1 | Animesh | Surat  |
+|    1 | Animesh | Surat  |
+|    2 | Raghav  | Delhi  |
+|    3 | Hari    | Jaipur |
+|    4 | Shiva   | Kashi  |
++------+---------+--------+
+5 rows in set (0.00 sec)
+
+-------INSERT DATA INTO TABLE-5------
+
+mysql> insert into trainees(id,name,state)values(1,'Sumit','Maharashtra');
+Query OK, 1 row affected (0.06 sec)
+
+mysql> insert into trainees(id,name,state)values(2,'Mahesh','Uttarkhand');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into trainees(id,name,state)values(3,'Namit','Telangana');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into trainees(id,name,state)values(4,'Rahul','Delhi');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into trainees(id,name,state)values(5,'Vivek','Asam');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from trainees;
++------+--------+-------------+
+| id   | name   | state       |
++------+--------+-------------+
+|    1 | Sumit  | Maharashtra |
+|    2 | Mahesh | Uttarkhand  |
+|    3 | Namit  | Telangana   |
+|    4 | Rahul  | Delhi       |
+|    5 | Vivek  | Asam        |
++------+--------+-------------+
+5 rows in set (0.00 sec)
+
+#-------CHANGE TABLES FROM 'MyISAM' TO 'InnoDB' WITHOUT LOSING ANY DATA IN THE TABLES-------------
+
+mysql> show create table data1;
++-------+------------------------------------------------------------------------------------------------------------------------------+
+| Table | Create Table                                                                                                                 |
++-------+------------------------------------------------------------------------------------------------------------------------------+
+| data1 | CREATE TABLE `data1` (
+  `id` int(11) DEFAULT NULL,
+  `name` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 |
++-------+------------------------------------------------------------------------------------------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> alter table data2 ENGINE=InnoDB;
+Query OK, 5 rows affected (0.07 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> show create table data2;
++-------+------------------------------------------------------------------------------------------------------------------------------+
+| Table | Create Table                                                                                                                 |
++-------+------------------------------------------------------------------------------------------------------------------------------+
+| data2 | CREATE TABLE `data2` (
+  `id` int(11) DEFAULT NULL,
+  `name` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 |
++-------+------------------------------------------------------------------------------------------------------------------------------+
+1 row in set (0.05 sec)
+
+mysql> alter table data3 ENGINE=InnoDB;
+Query OK, 5 rows affected (0.07 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> show create table data3;
++-------+------------------------------------------------------------------------------------------------------------------------------+
+| Table | Create Table                                                                                                                 |
++-------+------------------------------------------------------------------------------------------------------------------------------+
+| data3 | CREATE TABLE `data3` (
+  `id` int(11) DEFAULT NULL,
+  `name` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 |
++-------+------------------------------------------------------------------------------------------------------------------------------+
+1 row in set (0.05 sec)
+
+mysql> alter table employeesWithMyISAM ENGINE = InnoDB;
+Query OK, 5 rows affected (0.08 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> show create table employeesWithMyISAM;
++---------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Table               | Create Table                                                                                                                                                                  |
++---------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| employeesWithMyISAM | CREATE TABLE `employeesWithMyISAM` (
+  `id` int(11) DEFAULT NULL,
+  `name` varchar(50) DEFAULT NULL,
+  `city` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 |
++---------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+1 row in set (0.01 sec)
+
+#----------VALIDATE THE DATA AFTER MIGRATING TABLES FROM 'MyISAM' TO 'InnoDB'-------------
+
+mysql> show table status from k1;
++---------------------+--------+---------+------------+------+----------------+-------------+-----------------+--------------+-----------+----------------+---------------------+---------------------+------------+-------------------+----------+----------------+---------+
+| Name                | Engine | Version | Row_format | Rows | Avg_row_length | Data_length | Max_data_length | Index_length | Data_free | Auto_increment | Create_time         | Update_time         | Check_time | Collation         | Checksum | Create_options | Comment |
++---------------------+--------+---------+------------+------+----------------+-------------+-----------------+--------------+-----------+----------------+---------------------+---------------------+------------+-------------------+----------+----------------+---------+
+| data1               | InnoDB |      10 | Compact    |    5 |           3276 |       16384 |               0 |            0 |         0 |           NULL | 2021-02-28 19:25:49 | NULL                | NULL       | latin1_swedish_ci |     NULL |                |         |
+| data2               | InnoDB |      10 | Compact    |    5 |           3276 |       16384 |               0 |            0 |         0 |           NULL | 2021-02-28 19:27:06 | NULL                | NULL       | latin1_swedish_ci |     NULL |                |         |
+| data3               | InnoDB |      10 | Compact    |    5 |           3276 |       16384 |               0 |            0 |         0 |           NULL | 2021-02-28 19:27:35 | NULL                | NULL       | latin1_swedish_ci |     NULL |                |         |
+| employeesWithMyISAM | InnoDB |      10 | Compact    |    5 |           3276 |       16384 |               0 |            0 |         0 |           NULL | 2021-02-25 15:44:42 | NULL                | NULL       | latin1_swedish_ci |     NULL |                |         |
+| trainees            | MyISAM |      10 | Dynamic    |    5 |             25 |         128 | 281474976710655 |         1024 |         0 |           NULL | 2021-02-25 16:08:03 | 2021-02-25 16:20:51 | NULL       | latin1_swedish_ci |     NULL |                |         |
++---------------------+--------+---------+------------+------+----------------+-------------+-----------------+--------------+-----------+----------------+---------------------+---------------------+------------+-------------------+----------+----------------+---------+
+5 rows in set (0.00 sec)
